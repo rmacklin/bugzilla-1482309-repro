@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <button id="initiate_button">Send Request</button>
+    <script>
+      document.getElementById('initiate_button').addEventListener('click', (e) => {
+        fetch(
+          'http://localhost:5000/login_sessions',
+          {
+            credentials: 'include',
+            headers: {
+              Accept: 'application/json'
+            },
+            method: 'POST'
+          }
+        )
+          .then(response => response.json())
+          .then(console.log);
+      });
+    </script>
+  </body>
+</html>
